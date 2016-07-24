@@ -1,3 +1,3 @@
 # Brightcove
 
-This repository holds scripting for the New Brightcove API
+This is a sample Brightcove video hub player page using the new Brightcove API.
