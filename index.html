@@ -1,0 +1,245 @@
+<link rel="stylesheet" href="/jquery-ui.css">	
+<style type="text/css">
+/*------Default--------*/
+body {font-family: Arial,Helvetica,sans-serif;}
+li {float: left;margin: 0 20px;}
+/*-----Contianer-------*/
+.chn-vidhub-top {max-width:960px;margin: 3% auto;}
+.chn-videohub-player-container {display: block; position: relative; max-width: 640px;}
+#chn-vidhub-videoInfo {max-width:640px;}
+#chn-vidhub-meta-title {float:left;width:96%;}
+.chn-vidhub-playlist-wrapper {width: 960px;}
+.chn-vidhub-load-container {width: 100%;max-width: 960px;}
+/*------Meta data------*/
+#chn-vidhub-videoInfo {margin-bottom: 5%;width: 815px;border-bottom: 1px solid #a6a6a6;float: left;}
+#chn-vidhub-vidcat {margin: 0;font-size: 16px;color:#B5121B;text-transform:uppercase;} 
+#chn-vidhub-meta {display:inline-flex;width:100%}
+.chn-vidhub-opthead {float:right;width:4%;font-size:2em;color:#003E7E;padding-top: 2%;}
+.chn-vidhub-opthead:hover, #chn-vidhub-menu li:hover {cursor: pointer;}
+.chn-vidhub-meta-title {font-weight: 700;font-style: normal;font-size: 3em;line-height: 1.2;color:#0394D7} 
+.chn-vidhub-meta-desc {font-size: 17px;line-height: 28px;text-align: left;font-weight: 400;font-style: normal;}
+/*-------Menu--------*/
+.chn-vidhub-button:focus, .vjs-playlist-poster:focus, .vjs-playlist-item:focus {outline: none;}
+#chn-vidhub-menu li:hover {background-color: #00AFDB;color: #fff;}
+#chn-vidhub-menu {list-style: none;display: flex;width:100%;}
+/*------gallery------*/
+.vjs-playlist-description {display: none;}
+.vjs-playlist {font-size: 14px;min-width: 238px;background-color: #fff;color: #000;padding: 14px 14px 0 14px;display: block;max-width: 960px;}
+.vjs-playlist .vjs-playlist-item {height: 173px;margin-bottom: 14px;width: 310px;}
+.vjs-playlist-item {padding: 3% 0 8% 0;max-height: 300px;border-radius: 0px;box-shadow: 6px 9px 5px #c4c7c8;width: 100%;height: 100%;max-width: 260px;overflow: hidden;}
+.vjs-playlist .vjs-playlist-poster {height: 173px;margin-right: 14px;width: 260px;transition: all .5s ease-in-out;}
+.vjs-playlist-poster:hover {transform: scale(1.1);}
+.vjs-playlist .vjs-playlist-poster {background-color: #00AFDB;display: block;float: left;}
+.vjs-playlist .vjs-playlist-poster:before {display: block;position: absolute;background-color: rgba(0, 175, 219,0.7);text-align: center;color: #fff;right: 0;}
+.vjs-playlist .vjs-playlist-duration {background-color: rgba(255,255, 255,0.8);left: 0;padding: 2px 8px;position: absolute;top: 12%;z-index: 99;left: -7px;padding: 2px 10px;font-size: 12px;z-index: 9;}
+.vjs-playlist cite {height: 14px;line-height: 14px;z-index: 9;position: absolute;bottom: 16%;padding: 2%;overflow: visible;text-overflow: initial;white-space: normal;}
+.vjs-playlist-name {word-break: break-word;overflow: hidden;text-overflow: clip;max-width: 250px;}
+.loadMore {display: block;text-align: center;cursor: pointer;width: 420px;letter-spacing: -1px;font-size: 1.7rem;line-height: 1.7rem;font-weight: 700;margin: 0 auto;padding: 10px 0;border: 1px solid #003E7E;background-color: #003E7E;color:#fff;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;text-transform: lowercase;text-shadow: none;font-weight: 700;font-style: normal;}
+.vjs-icon-play {background-color: rgba(0, 175, 219,0.8);text-align: center;color: #fff;line-height: 30px;width: 30px;border-radius: 20px;position: relative;}
+.vjs-icon-play:before {bottom: 0;left: 0;right: 0;}
+.vjs-playlist .vjs-playlist-poster:before {display: block;position: absolute;background-color: rgba(0, 175, 219,0.7);text-align: center;color: #fff;right: 0;}
+/* hide 5th and subsequent items*/
+.vjs-playlist-item:nth-child(n+7) {display:none}
+</style>
+
+<div Class="chn-vidhub-top" id="chn-vidhub-top">
+    <div class="chn-videohub-player-container">
+        <div style="padding-top: 56.25%;" class="myplayer">
+        <video id="chn-videohub-player" data-account="1848920962" 
+            data-player="rk4JEU3N" 
+            data-embed="default" 
+            class="video-js" 
+            controls 
+            style="width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;">
+        </video>
+        <!--<script src="//players.brightcove.net/1848920962/rk4JEU3N_default/index.min.js"></script>-->
+        <script type="text/javascript" src="/script.js"></script>
+        </div>
+    </div>
+    <!--<div id="featured-ad">
+      <div class="ad-space" id="ad-space">
+        <h5>Advertisement</h5>
+      </div>
+    <div class="ad-image" id="ad-image"><img src="http://rogers-healthcarenetwork.04.demo.equisoft.com/files/2016/04/ad-sample-240x200.jpg" alt="ad-sample" width="300" height="250" class="alignnone size-medium wp-image-5089" /></div>
+    </div>-->
+    <div class="chn-vidhub-hide">
+    <!---------------------------------------------
+                video player
+    ---------------------------------------------->
+    <!---------------------------------------------
+                    meta data
+    ---------------------------------------------->
+    </div>
+    <div id="chn-vidhub-videoInfo">
+        <div>
+        	<p id="chn-vidhub-vidcat"><strong>Share with patients</strong><p>
+        </div>
+        <div id="chn-vidhub-meta">  	
+        	<h1 class="chn-vidhub-meta-title" id="chn-vidhub-meta-title">The effects of diabetes on erectile dysfunction</h1>
+            <div class="chn-vidhub-opthead">
+                <div class="chn-vidhub-arrow-up">&#9650;</div>
+                <div class="chn-vidhub-arrow-down chn-vidhub-hide">&#9660;</div>
+            </div>
+        </div>
+        <div id="chn-vidhub-meta-desc" class="chn-vidhub-meta-desc">
+          <p>In this short video, endocrinologist Dr. Richard Bebb discusses the damage diabetes can do to a blood vessels and nerves over several years. Aside from heart attack and stroke risks, and peripheral vascular disease, damage to the small vessels can include erectile dysfunction. Here he briefly reviews options to preserve erectile function.<br>    
+            <a href="http://www.healthchoicesfirst.com/topics/diabetes" target="_blank">Click here</a> to share this video with your patients at healthchoicesfirst.com.<br>Encourage them to try the video quiz!</p>
+        </div>
+    </div>
+    <div class="chn-vidhub-hide">
+    <!---------------------------------------------
+                end of meta data
+    ---------------------------------------------->
+    <!---------------------------------------------
+                    video menu
+    ---------------------------------------------->
+    </div>
+    <div>
+        <ul id="chn-vidhub-menu">
+            <li><input id="tab0" type="button" class="chn-vidhub-button" onclick="processTab(0);" value="Latest"></li>
+            <li><input id="tab1" type="button" class="chn-vidhub-button" onclick="processTab(1);" value="Share with Patients"></li>
+            <li><input id="tab2" type="button" class="chn-vidhub-button" onclick="processTab(2);" value="Medical"></li>
+            <li><input id="tab3" type="button" class="chn-vidhub-button" onclick="processTab(3);" value="Pharmacy"></li>
+            <li><input id="tab4" type="button" class="chn-vidhub-button" onclick="processTab(4);" value="Other"></li>
+        </ul>
+    </div>
+    <div class="chn-vidhub-hide">
+    <!---------------------------------------------
+                end of video menu
+    ---------------------------------------------->
+    <!---------------------------------------------
+                    playlists
+    ---------------------------------------------->	
+    </div>
+    <div class="chn-vidhub-playlist-wrapper">
+        <ol class="vjs-playlist" id="vjs-playlist"></ol>
+        <div class="chn-vidhub-load-container">
+          <div id="loadMore" class="loadMore">Load more</div> 
+        </div>
+    </div>
+</div>
+<!---------------------------------------------
+      		end of playlist
+---------------------------------------------->	
+<!-- jQuery libraries for tabbed navigation -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+<!-- jQuery initialize tabbed navigation -->
+<!---------------------------------------------
+            Brightcove code
+---------------------------------------------->	
+<script id="pageScript" type="text/javascript">
+	var myPlayer,
+		playlistIds = ["4868197176001","4868197203001","4868197200001","4890340678001","4868197201001"],
+		playlistIdsLength = playlistIds.length,
+		tabs = document.getElementsByClassName("chn-vidhub-button"),
+		currentTab,
+		currentTabName,
+		currentvideo,
+		playlistNames = [];
+	//Once the player is ready, it will load the first (latest) playlist	
+	videojs("chn-videohub-player").ready(function(){
+		myPlayer = this;
+		processTab(0);
+	});
+	//This loads the selected playlist on the page
+	function processTab (index) {
+		resetTabs();
+		loadplaylistentries();
+		document.getElementById("tab" + index).setAttribute("style","background:#00AFDB;color: #fff;border-radius: 10px;padding: .5em 1em;border: none;font-family: Arial,Helvetica,sans-serif;font-size: 18px;font-weight: normal;letter-spaing: -1px;line-height: 23.4px; text-align: left; zoom: 1;");
+		//Checks if player is paused; will only load new playlist 
+		if(myPlayer.paused()) {
+			loadPlaylist(playlistIds[index]);
+		} else {
+			loadPlaylistply();
+			console.log('mediainfo', myPlayer.mediainfo);	
+		};
+	};
+	//This loads the video into player
+	function loadPlaylist (currentId) {
+		myPlayer.catalog.getPlaylist(currentId, function(error, playlist){
+			myPlayer.catalog.load(playlist);				
+		});
+		//video metadata populates
+			loadmetadata();	
+	};
+	//This loads the playlist on the page; not in player
+	function loadPlaylistply (currentId) {
+		myPlayer.catalog.getPlaylist(currentId, function(error, playlist){
+  			myPlayer.catalog.load(playlist);
+		});
+	};
+	//This reloads the tabs
+	function resetTabs () {
+		var i,
+			iMax = tabs.length;
+		for (i = 0; i < iMax; i++) {
+			tabs[i].setAttribute("style", "background: #fff;color: #000;border-radius: 10px;padding: .5em 1em;border: none;font-family: Arial,Helvetica,sans-serif;font-size: 18px;font-weight: normal;letter-spaing: -1px;line-height: 23.4px; text-align: left; zoom: 1;")
+		}
+		$('#loadMore').show();
+	};
+	//This loads all metadata
+	function loadmetadata() {
+		var playerdata = videojs('chn-videohub-player').ready(function(){
+			var myPlayer = this;
+			myPlayer.on('loadstart',function(){
+				//video category populates
+				$('#chn-vidhub-vidcat').html(myPlayer.mediainfo.custom_fields.category);
+				//video title populates
+				$('#chn-vidhub-meta-title').html(myPlayer.mediainfo.name);
+				//video description populates
+				$('#chn-vidhub-meta-desc').html(myPlayer.mediainfo.description);
+				//video sponsor populates		
+				//$('#video-sponsor').html($(this).closest('.vjs-playlist-item').find('#sponsor').text());
+				//if($('#video-sponsor').html() == "") {
+					//$('#video-sponsor').hide();
+				//};
+			});
+    	});
+		//scroll to top after thumbnail is clicked
+		$('#vjs-playlist').click(function() {
+			$('html, body').animate({
+				scrollTop: $('#chn-vidhub-top').offset().top
+			 }, 2000);
+		});
+	};
+	//Loads more playlist entries onto screen
+	function loadplaylistentries() {
+		var x = 7,
+	    y,
+		limit_vids = 6,
+		load_more_vids = 3;
+		y = $('#vjs-playlist li')
+		$('#vjs-playlist li:lt(' + x + ')').show();
+		jQuery('#vjs-playlist li:gt('+(limit_vids-1)+')').hide();
+		jQuery('#loadMore').bind('click', function(event){
+			event.preventDefault();
+			limit_vids += load_more_vids;
+			jQuery('#vjs-playlist li:lt('+(limit_vids)+')').show(1500);
+			if (jQuery('#vjs-playlist li').length <= limit_vids) {
+				jQuery(this).hide();
+			}
+		});
+	};
+	//Video description show/hide
+	$(".chn-vidhub-arrow-down").hide();
+	$(".chn-vidhub-opthead").click(function(){
+		$(".chn-vidhub-meta-desc").slideToggle(500);
+		$(this).find(".chn-vidhub-arrow-down, .chn-vidhub-arrow-up").toggle();
+	});
+</script>
+<!---------------------------------------------
+Debugger 
+---------------------------------------------->
+<script type="text/javascript">
+jQuery(document).ready( function(){
+	var playerdata = videojs('chn-videohub-player').ready(function(){
+		var myPlayer = this;
+      	myPlayer.on('loadstart',function(){
+        	console.log('mediainfo', myPlayer.mediainfo);
+      	})
+    });
+});
+</script>
+
+
