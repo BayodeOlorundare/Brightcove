@@ -1,2 +1,3 @@
 # Brightcove
-New Brightcove API
+
+This repository holds scripting for the New Brightcove API
